@@ -64,5 +64,7 @@ public class PlayerVisualFX
 
         yield return new WaitForSeconds(animationTime);
         m_CanChangeAnimation = true;
+
+        Debug.Log("Ended");
     }
 }
