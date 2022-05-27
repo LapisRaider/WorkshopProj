@@ -5,11 +5,11 @@ public class EnemyVisuals
 {
     public float m_HitForce = 1.0f;
 
-    private Rigidbody2D m_rigidbody2D;
+    private Rigidbody2D m_Rigidbody2D;
 
     public EnemyVisuals(Rigidbody2D rigidbody2D)
     {
-        m_rigidbody2D = rigidbody2D;
+        m_Rigidbody2D = rigidbody2D;
     }
 
     public void HitEffect(Vector2 hitDir)
@@ -17,6 +17,6 @@ public class EnemyVisuals
         //TODO::
         //flash
         //insert particle effects here
-        m_rigidbody2D.velocity += hitDir * m_HitForce;
+        m_Rigidbody2D.velocity += hitDir * m_HitForce;
     }
 }
