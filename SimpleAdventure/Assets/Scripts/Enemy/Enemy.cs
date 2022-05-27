@@ -4,11 +4,11 @@ public class Enemy : MonoBehaviour
 {
     public string[] m_CollidableTags;
 
-    public EnemyVisuals m_EnemyVisuals;
+    public EnemyVisuals m_EnemyVisuals = new EnemyVisuals();
 
     private void Start()
     {
-        m_EnemyVisuals = new EnemyVisuals(GetComponent<Rigidbody2D>());
+        m_EnemyVisuals.Init(GetComponent<Rigidbody2D>());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

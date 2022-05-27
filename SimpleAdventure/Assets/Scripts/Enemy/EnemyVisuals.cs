@@ -3,11 +3,12 @@ using UnityEngine;
 [System.Serializable]
 public class EnemyVisuals
 {
-    public float m_HitForce = 1.0f;
+    [SerializeField] public float HIT_FORCE = 5.0f;
+    [SerializeField] public ParticleSystem m_BloodSplatter;
 
     private Rigidbody2D m_Rigidbody2D;
 
-    public EnemyVisuals(Rigidbody2D rigidbody2D)
+    public void Init(Rigidbody2D rigidbody2D)
     {
         m_Rigidbody2D = rigidbody2D;
     }
@@ -16,7 +17,8 @@ public class EnemyVisuals
     {
         //TODO::
         //flash
-        //insert particle effects here
-        m_Rigidbody2D.velocity += hitDir * m_HitForce;
+        m_Rigidbody2D.velocity += hitDir * HIT_FORCE;
+
+        m_BloodSplatter.Play();
     }
 }
