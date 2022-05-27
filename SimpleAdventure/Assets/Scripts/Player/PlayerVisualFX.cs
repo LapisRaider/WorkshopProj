@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerVisualFX
 {
     Animator m_Animator;
+    SpriteRenderer m_Sprite;
 
     private bool m_CanChangeAnimation = true;
 
@@ -13,21 +14,26 @@ public class PlayerVisualFX
     const string PLAYER_FALL = "PlayerFall";
     const string PLAYER_JUMP = "PlayerJump";
 
-    public PlayerVisualFX(Animator animator)
+    public PlayerVisualFX(Animator animator, SpriteRenderer sprite)
     {
         m_Animator = animator;
+        m_Sprite = sprite;
     }
 
-    public void Idle()
+    public void Idle(Vector2 faceDir)
     {
         if (m_CanChangeAnimation)
             ChangeAnimation(PLAYER_IDLE);
+
+        m_Sprite.flipX = faceDir.x == -1;
     }
 
-    public void MoveOnGround()
+    public void MoveOnGround(Vector2 faceDir)
     {
         if (m_CanChangeAnimation)
             ChangeAnimation(PLAYER_RUN);
+
+        m_Sprite.flipX = faceDir.x == -1;
     }
 
     public void Jump()
@@ -64,7 +70,5 @@ public class PlayerVisualFX
 
         yield return new WaitForSeconds(animationTime);
         m_CanChangeAnimation = true;
-
-        Debug.Log("Ended");
     }
 }

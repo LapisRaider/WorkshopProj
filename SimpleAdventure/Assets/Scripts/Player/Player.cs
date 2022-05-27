@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         m_playerMovement.Init(GetComponent<Rigidbody2D>());
-        m_visualFX = new PlayerVisualFX(GetComponent<Animator>());
+        m_visualFX = new PlayerVisualFX(GetComponent<Animator>(), GetComponent<SpriteRenderer>());
     }
 
     public void RegisterJumpListener(Action listener)
@@ -69,9 +69,9 @@ public class Player : MonoBehaviour
         }
 
         if (m_inputDir.x != 0)
-            m_visualFX.MoveOnGround();
+            m_visualFX.MoveOnGround(m_faceDir);
         else
-            m_visualFX.Idle();
+            m_visualFX.Idle(m_faceDir);
     }
 
     private void StartJump()

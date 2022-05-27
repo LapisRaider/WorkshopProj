@@ -6,6 +6,12 @@ public class Projectile : MonoBehaviour
     public string[] m_CollidableTags;
 
     private Vector2 m_dir = new Vector2(1.0f, 0.0f);
+    private SpriteRenderer m_Sprite;
+
+    private void Start()
+    {
+        m_Sprite = GetComponent<SpriteRenderer>();
+    }
 
     public void SetDir(Vector2 dir)
     {
@@ -16,6 +22,8 @@ public class Projectile : MonoBehaviour
     {
         //Projectile move horizontally in direction
         transform.position += new Vector3(m_dir.x * m_Speed * Time.fixedDeltaTime, 0.0f, 0.0f);
+
+        m_Sprite.flipX = m_dir.x == -1;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
