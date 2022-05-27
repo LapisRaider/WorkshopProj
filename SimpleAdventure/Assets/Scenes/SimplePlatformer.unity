@@ -819,7 +819,7 @@ GameObject:
   m_Component:
   - component: {fileID: 898881867}
   - component: {fileID: 898881866}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}

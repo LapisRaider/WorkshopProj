@@ -37,10 +37,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_inputDir.x = Input.GetAxisRaw("Horizontal");
-        MoveUpdate();
+        m_inputDir.x = Input.GetAxis("Horizontal");
+        MoveVisualsUpdate();
 
-        if (Input.GetKeyDown(KeyCode.Space) && m_onGround)
+        if (Input.GetKeyDown(KeyCode.Space) && !m_jump)
         {
             StartJump();
         }
@@ -51,12 +51,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void MoveUpdate()
+    private void MoveVisualsUpdate()
     {
         if (m_inputDir.x != 0)
-        {
             m_faceDir = m_inputDir;
-        }
 
         if (!m_onGround)
         {
@@ -92,7 +90,6 @@ public class Player : MonoBehaviour
         if (m_jump)
         {
             m_playerMovement.Jump();
-            m_jump = false;
         }
 
         m_onGround = Physics2D.OverlapCircle(m_feetPos.position, m_feetRadius, m_groundLayer);
