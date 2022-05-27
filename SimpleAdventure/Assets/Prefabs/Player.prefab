@@ -97,7 +97,7 @@ Animator:
   m_GameObject: {fileID: 1461225592123397197}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 71c73375b63071c4b855e742aff6fb96, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7e2eee43fda14ef46b44745aea7cdedc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
     m_jumpForce: 15
     m_fallMultiplier: 0.05
   m_PlayerActions:
-    m_ProjectileObjPooler: {fileID: 0}
+    m_ProjectilePrefab: {fileID: 5051605173385346404, guid: a85fddd9390136846a28ae747e332c18, type: 3}
   m_feetPos: {fileID: 1461225592801135406}
   m_feetRadius: 0.45
   m_groundLayer:

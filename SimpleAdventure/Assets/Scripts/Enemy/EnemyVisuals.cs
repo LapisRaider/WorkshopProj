@@ -6,6 +6,7 @@ public class EnemyVisuals
 {
     public float HIT_FORCE = 5.0f;
     public ParticleSystem m_BloodSplatter;
+    public CameraShake m_CameraShake;
 
     [InspectorName("Shake magnitude")]
     public float m_ShakeMagnitude = 1.0f;
@@ -31,7 +32,8 @@ public class EnemyVisuals
         if (m_BloodSplatter != null)
             m_BloodSplatter.Play();
 
-        CameraShake.GetInstance().ShakeCamera(m_ShakeDuration, m_ShakeMagnitude);
+        if (m_CameraShake != null)
+            m_CameraShake.ShakeCamera(m_ShakeDuration, m_ShakeMagnitude);
 
         monoBehaviour.StartCoroutine(Flash());
     }

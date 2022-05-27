@@ -3,33 +3,14 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-    private static CameraShake m_Instance;
-
     private Camera mainCamera;
-    private IEnumerator m_CurrShake;
 
-    private void Awake()
-    {
-        if (m_Instance == null)
-        {
-            m_Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (m_Instance != this)
-        {
-            Destroy(this);
-        }    
-    }
+    private IEnumerator m_CurrShake;
 
     // Start is called before the first frame update
     void Start()
     {
         mainCamera = Camera.main;
-    }
-
-    public static CameraShake GetInstance()
-    {
-        return m_Instance;
     }
 
     public void ShakeCamera(float duration, float magnitude)
