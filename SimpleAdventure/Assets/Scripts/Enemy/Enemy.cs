@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        m_EnemyVisuals.Init(GetComponent<Rigidbody2D>());
+        m_EnemyVisuals.Init(GetComponent<Rigidbody2D>(), GetComponent<SpriteRenderer>());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
                 Vector2 hitDir = transform.position - collision.transform.position;
                 hitDir.Normalize();
 
-                m_EnemyVisuals.HitEffect(hitDir);
+                m_EnemyVisuals.HitEffect(hitDir, this);
             }
         }
     }
