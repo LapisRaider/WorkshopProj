@@ -34,4 +34,9 @@ public class PlayerMovement
 
         m_rb.velocity += Vector2.up * Physics2D.gravity.y * m_fallMultiplier;
     }
+
+    public bool IsFalling()
+    {
+        return m_rb.velocity.y < 0.0f;
+    }
 }
