@@ -7,6 +7,7 @@ A live demo showcasing Unity techniques and some game systems.
 If you would like to try out the debugging process or some exercises yourself, checkout from the `Broken-Walkthrough` branch. Or you can visit the branch through this [link](https://github.com/LapisRaider/WorkshopProj/tree/Broken-Walkthrough).
 
 You can view the [slides here](https://docs.google.com/presentation/d/1eL6EjJ6h3Mx0KKI-RPNITw4Er59xdcnRATbmQZvVkeI/edit#slide=id.g12e52ca1a74_0_31).
+Or watch the [workshop recording here](https://www.youtube.com/watch?v=3bRAMC4ONQU&ab_channel=NUSOrbital)
 
 **Things covered:**
 * Debugging methods with Visual Studios/Unity console logs/Unity visual debugging tools
