@@ -26,3 +26,4 @@ Or watch the [workshop recording here](https://www.youtube.com/watch?v=3bRAMC4ON
 * Tileset and background: [Jungle Pack](https://rvros.itch.io/). Done by [Jesse Munguia](https://jesse-m.itch.io/)
 * Dinosaur: [Dino Characters | Sprites](https://arks.itch.io/dino-characters). Done by [Arks](https://arks.itch.io/)
 * Characters: [Bandits](https://sventhole.itch.io/bandits). Done by [Sven](https://sventhole.itch.io/)
+* Projectile: [Pixel Art Effect - FX017](https://nyknck.itch.io/pixelarteffectfx017). Done by [NYKNCK](https://nyknck.itch.io/)
