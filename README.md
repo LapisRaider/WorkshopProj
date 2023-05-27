@@ -7,11 +7,12 @@ A live demo showcasing Unity techniques and some game systems.
 If you would like to try out the debugging process or some exercises yourself, checkout from the `Broken-Walkthrough` branch. Or you can visit the branch through this [link](https://github.com/LapisRaider/WorkshopProj/tree/Broken-Walkthrough).
 
 You can view the [slides here](https://docs.google.com/presentation/d/1eL6EjJ6h3Mx0KKI-RPNITw4Er59xdcnRATbmQZvVkeI/edit#slide=id.g12e52ca1a74_0_31).
-Or watch the [workshop recording here](https://www.youtube.com/watch?v=3bRAMC4ONQU&ab_channel=NUSOrbital)
+Or watch the [workshop recording here, this is 2022 version](https://www.youtube.com/watch?v=3bRAMC4ONQU&ab_channel=NUSOrbital)
 
 **Things covered:**
 * Debugging methods with Visual Studios/Unity console logs/Unity visual debugging tools
 * Patterns (Object Pooling, Singleton, Observer pattern)
+* How to design your game around what your players have experienced to make it more intuitive.
 * How to playtest your game efficiently.
 * What can you do to polish you game
 
@@ -20,6 +21,7 @@ Or watch the [workshop recording here](https://www.youtube.com/watch?v=3bRAMC4ON
 * Once the player walk through the NPC, whenever the player jumps the NPC will jump
 * Able to shoot projectiles
 * Enemy can get hit by projectiles
+* In HighScore scene, you can transfer data from one scene to the next (shoot projectiles on the red block and walk to the circle to go to the next scene)
 
 # Credits for Assets taken
 * Player character: [Animated Pixel Adventure](https://rvros.itch.io/animated-pixel-hero). Done by [rvros](https://rvros.itch.io/)
