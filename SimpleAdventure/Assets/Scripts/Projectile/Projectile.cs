@@ -32,7 +32,7 @@ public class Projectile : MonoBehaviour
         {
             if (m_CollidableTags[i] == collision.tag)
             {
-                gameObject.SetActive(false);
+                Destroy(this);
             }
         }
     }

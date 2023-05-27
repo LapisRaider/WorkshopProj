@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-    private Camera mainCamera;
+    private Camera m_MainCamera;
 
     private IEnumerator m_CurrShake;
 
     // Start is called before the first frame update
     void Start()
     {
-        mainCamera = Camera.main;
+        m_MainCamera = Camera.main;
     }
 
     public void ShakeCamera(float duration, float magnitude)
@@ -24,7 +24,7 @@ public class CameraShake : MonoBehaviour
 
     IEnumerator Shake (float duration, float magnitude)
     {
-        Vector3 originalPos = mainCamera.transform.position;
+        Vector3 originalPos = m_MainCamera.transform.position;
 
         float elasped = 0.0f;
 
@@ -39,6 +39,6 @@ public class CameraShake : MonoBehaviour
             yield return null;
         }
 
-        mainCamera.transform.position = originalPos;
+        m_MainCamera.transform.position = originalPos;
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -19,7 +18,7 @@ public class Player : MonoBehaviour
     private bool m_jump = false;
     private bool m_onGround = false;
 
-    private delegate void NotifyJump();
+    public delegate void NotifyJump();
     private static NotifyJump m_NotifyJump;
 
     // Start is called before the first frame update
@@ -29,9 +28,9 @@ public class Player : MonoBehaviour
         m_visualFX.Init(GetComponent<Animator>(), GetComponent<SpriteRenderer>());
     }
 
-    public void RegisterJumpListener(Action listener)
+    public void RegisterJumpListener(NotifyJump listener)
     {
-        m_NotifyJump += new NotifyJump(listener);
+        m_NotifyJump += listener;
     }
 
     // Update is called once per frame
