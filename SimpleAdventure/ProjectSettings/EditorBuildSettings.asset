@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
-    path: Assets/Scenes/SimplePlatformer.unity
-    guid: ba0da1001ad777d4b8bb04f55f29242d
+    path: Assets/Scenes/HighScore/HighScoreScene1.unity
+    guid: 3fdebd49fec04a94391c7583314f28d6
+  - enabled: 1
+    path: Assets/Scenes/HighScore/HighScoreScene2.unity
+    guid: 338a7fe1ef648f34f938a9b50fdd1769
   m_configObjects: {}
