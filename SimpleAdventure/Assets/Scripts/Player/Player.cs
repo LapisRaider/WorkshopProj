@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
     public PlayerMovement m_playerMovement = new PlayerMovement();
     public PlayerActions m_PlayerActions = new PlayerActions();
-    public PlayerVisualFX m_visualFX;
+    public PlayerVisualFX m_visualFX = new PlayerVisualFX();
 
     [InspectorName("Check ground")]
     public Transform m_feetPos;
@@ -19,26 +19,26 @@ public class Player : MonoBehaviour
     private bool m_jump = false;
     private bool m_onGround = false;
 
-    private delegate void NotifyJump();
+    public delegate void NotifyJump();
     private static NotifyJump m_NotifyJump;
 
     // Start is called before the first frame update
     void Start()
     {
         m_playerMovement.Init(GetComponent<Rigidbody2D>());
-        m_visualFX = new PlayerVisualFX(GetComponent<Animator>(), GetComponent<SpriteRenderer>());
+        m_visualFX.Init(GetComponent<Animator>(), GetComponent<SpriteRenderer>());
     }
 
-    public void RegisterJumpListener(Action listener)
+    public void RegisterJumpListener(NotifyJump listener)
     {
-        m_NotifyJump += new NotifyJump(listener);
+        m_NotifyJump += listener;
     }
 
     // Update is called once per frame
     void Update()
     {
         m_inputDir.x = Input.GetAxisRaw("Horizontal");
-        MoveUpdate();
+        MoveVisualsUpdate();
 
         if (Input.GetKeyDown(KeyCode.Space) && m_onGround)
         {
@@ -51,7 +51,14 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void MoveUpdate()
+    /*
+     * Doing this method as I wanted to decouple the state transition from the animator 
+     * Give more control to code instead
+     * 
+     * Note: This project wanted a more "cleaner" state machine (without all the lines)
+     * But if you do not want the code to handle all the update (what the animator state machine does), do not do this
+     */
+    private void MoveVisualsUpdate()
     {
         if (m_inputDir.x != 0)
         {
@@ -61,9 +68,9 @@ public class Player : MonoBehaviour
         if (!m_onGround)
         {
             if (m_playerMovement.IsFalling())
-                m_visualFX.PlayerFall();
+                m_visualFX.PlayerFall(m_faceDir);
             else
-                m_visualFX.Jump();
+                m_visualFX.Jump(m_faceDir);
 
             return;
         }

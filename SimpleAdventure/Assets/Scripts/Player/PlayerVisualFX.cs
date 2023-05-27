@@ -14,7 +14,7 @@ public class PlayerVisualFX
     const string PLAYER_FALL = "PlayerFall";
     const string PLAYER_JUMP = "PlayerJump";
 
-    public PlayerVisualFX(Animator animator, SpriteRenderer sprite)
+    public void Init(Animator animator, SpriteRenderer sprite)
     {
         m_Animator = animator;
         m_Sprite = sprite;
@@ -36,16 +36,20 @@ public class PlayerVisualFX
         m_Sprite.flipX = faceDir.x == -1;
     }
 
-    public void Jump()
+    public void Jump(Vector2 faceDir)
     {
         if (m_CanChangeAnimation)
             ChangeAnimation(PLAYER_JUMP);
+
+        m_Sprite.flipX = faceDir.x == -1;
     }
 
-    public void PlayerFall()
+    public void PlayerFall(Vector2 faceDir)
     {
         if (m_CanChangeAnimation)
             ChangeAnimation(PLAYER_FALL);
+
+        m_Sprite.flipX = faceDir.x == -1;
     }
 
     public void Attack(MonoBehaviour monoBehaviour)
