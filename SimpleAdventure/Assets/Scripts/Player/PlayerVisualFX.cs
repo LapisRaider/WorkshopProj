@@ -14,7 +14,7 @@ public class PlayerVisualFX
     const string PLAYER_FALL = "PlayerFall";
     const string PLAYER_JUMP = "PlayerJump";
 
-    public PlayerVisualFX(Animator animator, SpriteRenderer sprite)
+    public void Init(Animator animator, SpriteRenderer sprite)
     {
         m_Animator = animator;
         m_Sprite = sprite;

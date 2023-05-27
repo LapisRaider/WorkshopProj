@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
     public PlayerMovement m_playerMovement = new PlayerMovement();
     public PlayerActions m_PlayerActions = new PlayerActions();
-    public PlayerVisualFX m_visualFX;
+    public PlayerVisualFX m_visualFX = new PlayerVisualFX();
 
     [InspectorName("Check ground")]
     public Transform m_feetPos;
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         m_playerMovement.Init(GetComponent<Rigidbody2D>());
-        m_visualFX = new PlayerVisualFX(GetComponent<Animator>(), GetComponent<SpriteRenderer>());
+        m_visualFX.Init(GetComponent<Animator>(), GetComponent<SpriteRenderer>());
     }
 
     public void RegisterJumpListener(Action listener)
@@ -51,6 +51,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    /*
+     * Doing this method as I wanted to decouple the state transition from the animator 
+     * Give more control to code instead
+     * 
+     * Note: This project wanted a more "cleaner" state machine (without all the lines)
+     * But if you do not want the code to handle all the update (what the animator state machine does), do not do this
+     */
     private void MoveVisualsUpdate()
     {
         if (m_inputDir.x != 0)
